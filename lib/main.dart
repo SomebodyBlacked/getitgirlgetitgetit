@@ -6,7 +6,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:myapp/image_controller.dart';
-import 'package:myapp/images_tables.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -89,13 +88,6 @@ class MyApp extends StatelessWidget {
                   fit: BoxFit.cover,
                 );
               }),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  Get.to(ImagesTables());
-                },
-                child: const Text("Go to images"),
-              ),
             ],
           ),
         ),
