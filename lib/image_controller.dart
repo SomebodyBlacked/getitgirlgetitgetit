@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -28,6 +29,10 @@ class ImageController extends GetxController {
   }
 
   Future<void> saveImage() async {
+    if (kIsWeb) {
+      Get.snackbar("Error", "Web not supported.");
+      return;
+    }
     EasyLoading.show(status: 'Saving...');
     if (image != null) {
       await storage
